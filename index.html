@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ساعت کودکانه</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body onclick="changeTime()">
+  <svg id="clock" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="95" fill="#ffe6f0" stroke="#d63384" stroke-width="4" />
+
+    <!-- عقربه‌ها -->
+    <line id="hour-hand" x1="100" y1="100" x2="100" y2="60" stroke="#0077cc" stroke-width="6" />
+    <line id="minute-hand" x1="100" y1="100" x2="100" y2="40" stroke="#ff6600" stroke-width="4" />
+
+    <!-- اعداد ساعت -->
+    <g id="numbers"></g>
+  </svg>
+
+  <script src="script.js"></script>
+</body>
+</html>
