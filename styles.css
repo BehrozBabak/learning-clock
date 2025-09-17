@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'BKOODB';
+  src: url('./Font/BKOODB.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'BKOODB';
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -5,12 +17,31 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
 }
 
 #clock {
-  width: 90vw;
-  height: 90vw;
-  max-width: 300px;
-  max-height: 300px;
+  width: min(95vw, 95vh);
+  height: min(95vw, 95vh);
+  max-width: 400px;
+  max-height: 400px;
+}
+
+#dedication {
+  position: fixed;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 16px;
+  color: #444;
+  font-family: 'BKOODB', sans-serif;
+  z-index: 10;
+}
+
+
+
+svg {
+  overflow: visible;
 }

@@ -4,19 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ساعت کودکانه</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body onclick="changeTime()">
-  <svg id="clock" viewBox="0 0 200 200">
+
+  <svg id="clock" viewBox="-20 -20 240 240" xmlns="http://www.w3.org/2000/svg">
+    <!-- دایره اصلی -->
     <circle cx="100" cy="100" r="95" fill="#ffe6f0" stroke="#d63384" stroke-width="4" />
 
-    <!-- عقربه‌ها -->
-    <line id="hour-hand" x1="100" y1="100" x2="100" y2="60" stroke="#0077cc" stroke-width="6" />
-    <line id="minute-hand" x1="100" y1="100" x2="100" y2="40" stroke="#ff6600" stroke-width="4" />
+    <!-- خطوط دقیقه و ساعت -->
+    <g id="minute-marks"></g>
 
-    <!-- اعداد ساعت -->
+    <!-- عقربه‌ها (نشانگرهای گرافیکی) -->
+    <g id="hands"></g>
+
+    <!-- اعداد ساعت و دقیقه -->
     <g id="numbers"></g>
   </svg>
+  
+  <div id="dedication">هدیه به مدرسه حضرت رقیه (س) از طرف آرام صلواتچی</div>
 
   <script src="script.js"></script>
 </body>
