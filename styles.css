@@ -1,3 +1,4 @@
+/* فونت فارسی کودکانه */
 @font-face {
   font-family: 'BKOODB';
   src: url('./Font/BKOODB.woff2') format('woff2');
@@ -5,22 +6,87 @@
   font-style: normal;
 }
 
+/* تنظیمات پایه برای همه عناصر */
 * {
   font-family: 'BKOODB';
   box-sizing: border-box;
 }
 
+/* تنظیمات کلی صفحه */
 body {
   margin: 0;
   padding: 0;
-  background-color: #ffe6f0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100dvh;
   overflow: hidden;
+  position: relative;
 }
 
+/* دکمه‌های حالت بالا */
+#mode-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.mode-button {
+  width: 80px;
+  height: 80px;
+  background: #eeeeff;
+  border-radius: 12px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mode-button img {
+  width: 40px;
+  height: 40px;
+}
+
+.mode-label {
+  font-size: 14px;
+  margin-top: 4px;
+  color: #333;
+  font-family: 'BKOODB', sans-serif;
+}
+
+/* افکت فعال برای دکمه‌ها */
+.mode-button.active-mode {
+  background: linear-gradient(135deg, #ffddee, #cc99ff);
+  box-shadow: 0 0 8px rgba(204, 153, 255, 0.6);
+  transform: scale(1.05);
+}
+
+/* دکمه راهنما */
+#helper-toggle {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 12px;
+  padding: 6px;
+}
+
+#helper-toggle.active-mode {
+  background: linear-gradient(135deg, #ffccff, #cc99ff);
+  box-shadow: 0 0 8px rgba(204, 153, 255, 0.6);
+  transform: scale(1.05);
+}
+
+#helper-toggle img {
+  width: 40px;
+  height: 40px;
+}
+
+/* ساعت آنالوگ */
 #clock {
   width: min(95vw, 95vh);
   height: min(95vw, 95vh);
@@ -28,20 +94,53 @@ body {
   max-height: 400px;
 }
 
-#dedication {
+svg {
+  overflow: visible;
+}
+
+/* ساعت دیجیتال */
+#digital-time {
+  margin-top: 12px;
+  font-size: 32px;
+  color: #0055aa;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  font-weight: bold;
+  direction: rtl;
+}
+
+/* متن پایین صفحه */
+#dedication-text {
   position: fixed;
   bottom: 12px;
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 16px;
-  color: #444;
-  font-family: 'BKOODB', sans-serif;
+  font-size: 18px;
   z-index: 10;
 }
 
+/* افکت رنگین‌کمانی برای متن هدیه */
+.rainbow {
+  background: linear-gradient(to right, #ff4d4d, #ffa64d, #ffff66, #66ff66, #66ccff, #cc99ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
 
+/* افکت سایه صورتی برای دکمه فعال */
+.active-mode {
+  box-shadow: 0 0 8px 2px #ff66cc;
+  border-radius: 12px;
+  background-color: #fff0f5;
+}
 
-svg {
-  overflow: visible;
+/* تصویر هدیه اگر اضافه بشه */
+#dedication img {
+  max-width: 100vw;
+  height: auto;
 }

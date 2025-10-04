@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>در حال بارگذاری...</title>
+  <style>
+    @font-face {
+      font-family: 'BKOODB';
+      src: url('./Font/BKOODB.woff2') format('woff2');
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffddee, #f5a9f7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100dvh;
+      font-family: 'BKOODB', sans-serif;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .splash-container {
+      text-align: center;
+      color: #663399;
+    }
+
+    .splash-container img {
+      width: 220px;
+      height: auto;
+      margin-bottom: 16px;
+    }
+
+    .splash-title {
+      font-size: 28px;
+      font-weight: bold;
+      background: linear-gradient(to right, #ff4d4d, #ffa64d, #ffff66, #66ff66, #66ccff, #cc99ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="splash-container">
+    <img src="icon-clock.png" alt="آموزش ساعت" />
+    <div class="splash-title">آموزش ساعت برای کودکان</div>
+  </div>
+
+  <script>
+    // بعد از ۲ ثانیه هدایت به صفحه اصلی
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 2000);
+  </script>
+</body>
+</html>

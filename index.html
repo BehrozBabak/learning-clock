@@ -3,27 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ساعت کودکانه</title>
+  <title>ساعت آموزشی کودک</title>
+
+  <!-- استایل و تنظیمات PWA -->
   <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#cc99ff" />
 </head>
-<body onclick="changeTime()">
 
-  <svg id="clock" viewBox="-20 -20 240 240" xmlns="http://www.w3.org/2000/svg">
-    <!-- دایره اصلی -->
-    <circle cx="100" cy="100" r="95" fill="#ffe6f0" stroke="#d63384" stroke-width="4" />
+<body onclick="handleClockTap()">
 
-    <!-- خطوط دقیقه و ساعت -->
+  <!-- دکمه‌های بالا: واقعی، آموزشی، راهنما -->
+  <div id="mode-buttons">
+    <div id="real-mode" class="mode-button" onclick="setRealMode(event)">
+      <img src="icon-clock.png" alt="حالت واقعی" />
+      <div class="mode-label">واقعی</div>
+    </div>
+    <div id="training-mode" class="mode-button" onclick="setTrainingMode(event)">
+      <img src="icon-unicorn.png" alt="حالت آموزشی" />
+      <div class="mode-label">آموزشی</div>
+    </div>
+    <div id="helper-toggle" class="mode-button" onclick="toggleHelper()">
+      <img src="icon-helper.png" alt="راهنما" />
+      <div class="mode-label">راهنما</div>
+    </div>
+  </div>
+
+  <!-- ساعت آنالوگ -->
+  <svg id="clock" viewBox="-60 -60 300 300" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="shadow"><feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#999" /></filter>
+    </defs>
+    <image href="cloud-frame.png" x="-40" y="-40" width="280" height="280" />
     <g id="minute-marks"></g>
-
-    <!-- عقربه‌ها (نشانگرهای گرافیکی) -->
     <g id="hands"></g>
-
-    <!-- اعداد ساعت و دقیقه -->
     <g id="numbers"></g>
   </svg>
-  
-  <div id="dedication">هدیه به مدرسه حضرت رقیه (س) از طرف آرام صلواتچی</div>
 
+  <!-- ساعت دیجیتال -->
+  <div id="digital-time">
+    <span id="time-value">۰۰:۰۰</span>
+    <span id="time-period">صبح</span>
+  </div>
+
+  <!-- متن پایین صفحه -->
+  <div id="dedication-text">
+    <span class="rainbow">هدیه به مدرسه حضرت رقیه (س) از طرف آرام صلواتچی</span>
+  </div>
+
+  <!-- اسکریپت اصلی -->
   <script src="script.js"></script>
 </body>
 </html>
